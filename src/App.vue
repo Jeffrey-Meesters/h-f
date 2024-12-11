@@ -46,7 +46,6 @@
   .main-footer {
     grid-area: main-footer;
     grid-column: span 2;
-    min-height: 100px;
   }
 }
 </style>
