@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --astral-50: #f1f8fa;
+    --astral-100: #dbecf2;
+    --astral-200: #bcd9e5;
+    --astral-300: #8dbed3;
+    --astral-400: #579ab9;
+    --astral-500: #3f85a8;
+    --astral-600: #346786;
+    --astral-700: #30556e;
+    --astral-800: #2e485c;
+    --astral-900: #2a3e4f;
+    --astral-950: #182734;
+  }
+}
