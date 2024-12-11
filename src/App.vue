@@ -3,16 +3,18 @@
 
 <template>
   <div class="page text-astral-100">
-    <header class="main-header border-b border-astral-500 bg-astral-950">
-      nav bar
+    <header class="main-header flex items-center p-2 border-b border-astral-500 bg-astral-950">
+      <span class="text-4xl font-extrabold tracking-wider">
+        Freedom!
+      </span>
     </header>
     <aside class="main-aside border-r border-astral-500 bg-astral-950">
-      <nav></nav>
+      <nav> nav bar</nav>
     </aside>
     <main class="main-content p-2 bg-astral-950">
       <h1 class="text-4xl text-white">Hello</h1>
     </main>
-    <footer class="main-footer border-t border-astral-500 bg-astral-950">
+    <footer class="main-footer border-t border-astral-500 bg-astral-950 flex justify-center items-center">
       Created by Jeffrey Meesters
     </footer>
   </div>
@@ -22,7 +24,7 @@
 .page {
   height: 100svh;
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: minmax(100px, 200px) minmax(200px, 1fr);
   grid-template-rows: 60px 1fr 50px;
   grid-template-areas: 
     'main-header main-header'
