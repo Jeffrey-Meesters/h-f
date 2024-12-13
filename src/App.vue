@@ -5,24 +5,24 @@ import Month from './components/calendar/Month.vue';
 </script>
 
 <template>
-  <div class="page text-astral-100">
-    <header class="main-header flex items-center p-2 border-b border-astral-500 bg-astral-950">
+  <div class="page text-astral-800">
+    <header class="main-header flex items-center p-2 border-b border-astral-500 bg-astral-50">
       <span class="text-4xl font-extrabold tracking-wider">
         Freedom!
       </span>
     </header>
-    <aside class="main-aside border-r border-astral-500 bg-astral-950 p-1">
+    <aside class="main-aside border-r border-astral-500 bg-astral-50 p-1">
       <CountrySelector class="mb-2 mt-2"/>
       <YearSelector class="mb-2"/>
     </aside>
-    <main class="main-content p-2 bg-astral-950">
+    <main class="main-content p-2 bg-astral-50">
       <section>
         <h1 class="text-4xl text-white">Want to know when those good days come again?!</h1>
         <h2 class="text-2xl text-white">Hurry, find them below!</h2>
       </section>
       <Month />
     </main>
-    <footer class="main-footer border-t border-astral-500 bg-astral-950 flex justify-center items-center">
+    <footer class="main-footer border-t border-astral-500 bg-astral-50 flex justify-center items-center">
       Created by Jeffrey Meesters
     </footer>
   </div>
