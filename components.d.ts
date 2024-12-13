@@ -11,6 +11,7 @@ declare module 'vue' {
     copy: typeof import('./src/components/CountrySelector copy.vue')['default']
     CountrySelector: typeof import('./src/components/CountrySelector.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    Month: typeof import('./src/components/calendar/Month.vue')['default']
     Select: typeof import('primevue/select')['default']
     YearSelector: typeof import('./src/components/YearSelector.vue')['default']
   }

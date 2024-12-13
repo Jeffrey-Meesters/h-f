@@ -9,12 +9,12 @@ export const useCountryStore = defineStore('country', () => {
   const selectedCountry = ref<countryType>({countryCode:"NL", name:"Netherlands"})
 
   const getCountries = async () => {
-    const data = await useFetch('GET', '/AvailableCountries')
+    const data = await useFetch('/AvailableCountries')
     countries.value = data;
   }
 
   const getCountry = async (countryCode = 'BO') => {
-    const data = await useFetch('GET', `/CountryInfo/${countryCode}`)
+    const data = await useFetch(`/CountryInfo/${countryCode}`)
     selectedCountryInfo.value = data;
   }
 
