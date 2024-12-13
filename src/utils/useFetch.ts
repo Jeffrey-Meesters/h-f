@@ -1,13 +1,12 @@
-export const useFetch = async <T>(method: string, uri: string, data?: T) => {
+export const useFetch = async (uri: string) => {
   const baseUrl = 'https://date.nager.at/api/v3';
   
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
   
   const request = new Request(`${baseUrl}${uri}`, {
-    method,
+    method: 'GET',
     headers,
-    body: data ? JSON.stringify(data) : null,
   })
   
   try {

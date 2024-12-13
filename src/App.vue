@@ -11,8 +11,8 @@ import YearSelector from './components/YearSelector.vue';
       </span>
     </header>
     <aside class="main-aside border-r border-astral-500 bg-astral-950 p-1">
-      <CountrySelector />
-      <YearSelector />
+      <CountrySelector class="mb-2 mt-2"/>
+      <YearSelector class="mb-2"/>
     </aside>
     <main class="main-content p-2 bg-astral-950">
       <section>
