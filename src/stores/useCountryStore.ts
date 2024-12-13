@@ -1,13 +1,14 @@
 import { ref } from 'vue'
 import { useFetch } from '../utils/useFetch'
 import { defineStore } from 'pinia'
-import type { countriesType, countryType } from '../types/countryTypes'
+import type { countryType, countryInfoType } from '../types/countryTypes'
 
 
 
 export const useCountryStore = defineStore('country', () => {
-  const countries = ref<countriesType | []>([])
-  const selectedCountryInfo = ref<countryType>()
+  const countries = ref<countryType[]>([])
+  const selectedCountryInfo = ref<countryInfoType>()
+  const selectedCountry = ref<countryType>({countryCode:"NL", name:"Netherlands"})
 
   const getCountries = async () => {
     const data = await useFetch('GET', '/AvailableCountries')
@@ -21,6 +22,7 @@ export const useCountryStore = defineStore('country', () => {
 
   return {
     countries,
+    selectedCountry,
     getCountries,
     getCountry
   }

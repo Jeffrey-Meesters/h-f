@@ -8,6 +8,8 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Button: typeof import('primevue/button')['default']
+    CountrySelector: typeof import('./src/components/CountrySelector.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    Select: typeof import('primevue/select')['default']
   }
 }
