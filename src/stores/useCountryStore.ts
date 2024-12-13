@@ -3,8 +3,6 @@ import { useFetch } from '../utils/useFetch'
 import { defineStore } from 'pinia'
 import type { countryType, countryInfoType } from '../types/countryTypes'
 
-
-
 export const useCountryStore = defineStore('country', () => {
   const countries = ref<countryType[]>([])
   const selectedCountryInfo = ref<countryInfoType>()

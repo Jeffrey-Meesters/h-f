@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import CountrySelector from './components/CountrySelector.vue';
+import YearSelector from './components/YearSelector.vue';
 </script>
 
 <template>
@@ -11,6 +12,7 @@ import CountrySelector from './components/CountrySelector.vue';
     </header>
     <aside class="main-aside border-r border-astral-500 bg-astral-950 p-1">
       <CountrySelector />
+      <YearSelector />
     </aside>
     <main class="main-content p-2 bg-astral-950">
       <section>
