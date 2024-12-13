@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { useCountryStore } from './stores/useCountryStore';
+const store = useCountryStore();
+const fetch = () => store.getCountry();
 </script>
 
 <template>
@@ -13,6 +16,7 @@
     </aside>
     <main class="main-content p-2 bg-astral-950">
       <h1 class="text-4xl text-white">Hello</h1>
+      <Button @click="fetch"/>
     </main>
     <footer class="main-footer border-t border-astral-500 bg-astral-950 flex justify-center items-center">
       Created by Jeffrey Meesters
