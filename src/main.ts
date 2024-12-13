@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import PrimeVue from 'primevue/config';
 import App from './App.vue'
-import Aura from '@primevue/themes/aura';
+import { Preset } from './primevuePreset';
 import './style.css'
 import 'primeicons/primeicons.css'
 
@@ -12,10 +12,10 @@ const pinia = createPinia()
 app.use(PrimeVue, {
   ripple: true,
   theme: {
-    preset: Aura,
+    preset: Preset,
     options: {
       darkModeSelector: false || 'none',
-    }
+    },
   },
 });
 app.use(pinia)
