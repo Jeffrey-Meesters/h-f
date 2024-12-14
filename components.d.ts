@@ -14,6 +14,7 @@ declare module 'vue' {
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Month: typeof import('./src/components/calendar/Month.vue')['default']
     MonthControls: typeof import('./src/components/calendar/MonthControls.vue')['default']
+    SearchButton: typeof import('./src/components/SearchButton.vue')['default']
     Select: typeof import('primevue/select')['default']
     YearSelector: typeof import('./src/components/YearSelector.vue')['default']
   }

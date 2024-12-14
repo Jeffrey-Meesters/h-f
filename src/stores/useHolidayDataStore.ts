@@ -15,18 +15,18 @@ export const useHolidayDataStore = defineStore('holidayData', () => {
   const isTodayPublicHoliday = ref(false)
 
   const getLongWeekends = async() => {
-    const data = await useFetch(`/LongWeekend/${selectedYear}/${selectedCountry}`)
+    const data = await useFetch(`/LongWeekend/${selectedYear.value}/${selectedCountry.value.countryCode}`)
     longWeekendsData.value = data
   }
 
   const getPublicHolidays = async() => {
-    const data = await useFetch(`/PublicHolidays/${selectedYear}/${selectedCountry}`)
+    const data = await useFetch(`/PublicHolidays/${selectedYear.value}/${selectedCountry.value.countryCode}`)
     publickHolidaysData.value = data
   }
 
   const getTodayIsPublicHoliday = async() => {
     try {
-      await useFetch(`/IstodayPublicHoliday/${selectedCountry}`)
+      await useFetch(`/IstodayPublicHoliday/${selectedCountry.value.countryCode}`)
       isTodayPublicHoliday.value = true // TODO this one returns HTTP codes only: 
       // So this one should be hanlded differently.
       // 200	Today is a public holiday
@@ -40,7 +40,7 @@ export const useHolidayDataStore = defineStore('holidayData', () => {
   }
 
   const getUpcommingHolidays = async () => {
-    const data = await useFetch(`/NextPublicHolidays/${selectedCountry}`)
+    const data = await useFetch(`/NextPublicHolidays/${selectedCountry.value.countryCode}`)
     publicHolidays.value = data
   }
 
