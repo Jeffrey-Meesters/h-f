@@ -25,7 +25,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="card flex justify-center">
+  <div>
     <Select v-model="selectedYear" :options="allowedYears" filter placeholder="Select a year" class="w-full md:w-56">
       <template #option="slotProps">
         <div class="flex items-center">

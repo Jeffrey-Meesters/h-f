@@ -12,17 +12,21 @@ import Month from './components/calendar/Month.vue';
         Freedom!
       </span>
     </header>
-    <aside class="main-aside border-r border-astral-500 bg-astral-50 p-1">
-      <CountrySelector class="mb-2 mt-2"/>
-      <YearSelector class="mb-2"/>
+    <!-- <aside class="main-aside border-r border-astral-500 bg-astral-50 p-1">
       <SearchButton class="mb-2 w-full" button-text="Public holidays" used-for-store-action-name="getPublicHolidays"/>
       <SearchButton class="mb-2 w-full" button-text="Long weekends" used-for-store-action-name="getLongWeekends"/>
       <SearchButton class="mb-2 w-full" button-text="Check today" used-for-store-action-name="getTodayIsPublicHoliday"/>
       <SearchButton class="mb-2 w-full" button-text="Upcoming" used-for-store-action-name="getUpcommingHolidays"/>
       <SearchButton class="mb-2 w-full" button-text="Upcoming worldwide" used-for-store-action-name="getUpcommingHolidaysWorldWide"/>
-    </aside>
+    </aside> -->
     <main class="main-content p-2 bg-astral-50">
-      <Month />
+      <section class="filter-container flex flex-row justify-center gap-2">
+        <CountrySelector class="mb-2 self-end"/>
+        <YearSelector class="mb-2 self-start"/>
+      </section>
+      <section class="calendar">
+        <Month />
+      </section>
     </main>
     <footer class="main-footer border-t border-astral-500 bg-astral-50 flex justify-center items-center">
       Created by Jeffrey Meesters
@@ -38,7 +42,7 @@ import Month from './components/calendar/Month.vue';
   grid-template-rows: 60px 1fr 50px;
   grid-template-areas: 
     'main-header main-header'
-    'main-aside main-content'
+    'main-content main-content'
     'main-footer main-footer'
   ;
 

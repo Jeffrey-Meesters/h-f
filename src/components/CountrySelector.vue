@@ -14,7 +14,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="card flex justify-center">
+  <div>
     <Select v-model="selectedCountry" :options="countries" filter optionLabel="name" placeholder="Select a Country" class="w-full md:w-56">
       <template #option="slotProps">
         <div class="flex items-center">
