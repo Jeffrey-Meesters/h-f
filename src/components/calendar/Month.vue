@@ -9,7 +9,7 @@ const {firstDay, daysInMonth, daysOfWeek} = storeToRefs(useCalendarStore())
   <Card>
     <template #content>
       <MonthControls />
-      <section class="grid grid-cols-7 gap-2 m-0 m-auto">
+      <section class="grid grid-cols-7 gap-2 m-auto">
         <div class="p-2 border border-astral-200 text-center font-bold rounded bg-astral-200" v-for="weekday in daysOfWeek">
           {{ weekday }}
         </div>

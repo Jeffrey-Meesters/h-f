@@ -18,13 +18,13 @@ const props = defineProps<propsTypes>()
 
 const performAction = async () => {
   const service = holidayDataStore[props.usedForStoreActionName];
-  if (service && typeof service === 'function') { // to satisfy TS
-    await service();
+  if (!service || typeof service !== 'function') { // to satisfy TS
+    // Developer error, that somehow got passed the Union TS check
+    console.error(`Method ${props.usedForStoreActionName} does not exists`)
     return;
   }
-
-  // Developer error, that somehow got passed the Union TS check
-  console.error(`Method ${props.usedForStoreActionName} does not exists`)
+  
+  await service();
 }
 
 </script>
