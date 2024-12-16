@@ -21,7 +21,7 @@ function createYears() {
   }
 
   if (!years) {
-    for(let i = 1974; i < 2075; i ++) {
+    for(let i = 1975; i < 2075; i ++) {
       allowedYears.value.push(i)
     }
   }
