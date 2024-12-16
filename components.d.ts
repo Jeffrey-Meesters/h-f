@@ -9,13 +9,17 @@ declare module 'vue' {
   export interface GlobalComponents {
     Button: typeof import('primevue/button')['default']
     Card: typeof import('primevue/card')['default']
-    copy: typeof import('./src/components/CountrySelector copy.vue')['default']
     CountrySelector: typeof import('./src/components/CountrySelector.vue')['default']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    Day: typeof import('./src/components/calendar/Day.vue')['default']
+    Divider: typeof import('primevue/divider')['default']
+    Drawer: typeof import('primevue/drawer')['default']
+    InfoDrawer: typeof import('./src/components/InfoDrawer.vue')['default']
     Month: typeof import('./src/components/calendar/Month.vue')['default']
     MonthControls: typeof import('./src/components/calendar/MonthControls.vue')['default']
-    SearchButton: typeof import('./src/components/SearchButton.vue')['default']
     Select: typeof import('primevue/select')['default']
     YearSelector: typeof import('./src/components/YearSelector.vue')['default']
+  }
+  export interface ComponentCustomProperties {
+    Tooltip: typeof import('primevue/tooltip')['default']
   }
 }

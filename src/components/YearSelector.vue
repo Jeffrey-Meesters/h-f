@@ -1,11 +1,17 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { useDateStore } from '../stores/useDateStore';
+import { useHolidayDataStore } from '../stores/useHolidayDataStore';
 import { storeToRefs } from 'pinia';
 
+const holidayStore = useHolidayDataStore()
 const { allowedYears, selectedYear } = storeToRefs(useDateStore());
 
-onMounted(() => {
+async function fetchData() {
+  holidayStore.initApplication()
+}
+
+function createYears() {
   const storageKey = 'years'
   const years = sessionStorage.getItem(storageKey);
 
@@ -21,12 +27,16 @@ onMounted(() => {
   }
 
   sessionStorage.setItem(storageKey, JSON.stringify(allowedYears.value));
+}
+
+onMounted(() => {
+ createYears()
 })
 </script>
 
 <template>
   <div>
-    <Select v-model="selectedYear" :options="allowedYears" filter placeholder="Select a year" class="w-full md:w-56">
+    <Select @change="fetchData()" v-model="selectedYear" :options="allowedYears" filter placeholder="Select a year" class="w-full md:w-56">
       <template #option="slotProps">
         <div class="flex items-center">
           <div>{{ slotProps.option }}</div>

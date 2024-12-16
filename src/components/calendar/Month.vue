@@ -2,24 +2,52 @@
 import { storeToRefs } from 'pinia';
 import MonthControls from './MonthControls.vue';
 import { useCalendarStore } from '../../stores/useCalendarStore';
-const {firstDay, daysInMonth, daysOfWeek} = storeToRefs(useCalendarStore())
+import { useHolidayDataStore } from '../../stores/useHolidayDataStore';
+import Day from './Day.vue';
+import type { holidayDataType, longWeekendDataType } from '../../types/holidayTypes';
+
+const {firstDay, daysInMonth, daysOfWeek, currentMonth } = storeToRefs(useCalendarStore())
+const { getHolidayData, getLongWeekendData } = storeToRefs(useHolidayDataStore())
+
+function getHoliday(day: number): Partial<holidayDataType> {
+  const updatedMonthIndex = currentMonth.value + 1;
+  const updatedDay = (day).toString().length < 2 ? `0${day}` : day
+  const month = (updatedMonthIndex).toString().length < 2 ? `0${updatedMonthIndex}` : updatedMonthIndex
+  const data = getHolidayData.value
+  let obj = {}
+  for(const holiday of data) {
+    if (holiday.date.includes(`${month}-${updatedDay}`)) {
+      obj = {...holiday}
+    }
+  }
+
+  return obj;
+}
+
+function getLongWeekends(): Partial<longWeekendDataType> {
+  const updatedMonthIndex = currentMonth.value + 1;
+  const month = (updatedMonthIndex).toString().length < 2 ? `0${updatedMonthIndex}` : updatedMonthIndex
+  const data = getLongWeekendData.value
+  let obj = {}
+  for(const holiday of data) {
+    if (holiday.startDate.includes(`${month}`)) {
+      obj = {...holiday}
+    }
+  }
+
+  return obj;
+}
 </script>
 
 <template>
-  <Card>
-    <template #content>
+  <div class="border rounded-xl sm:p-0 md:p-2 drop-shadow-md bg-astral-50 dark:bg-astral-800 border-astral-50 dark:border-astral-800">
       <MonthControls />
-      <section class="grid grid-cols-7 gap-2 m-auto">
-        <div class="p-2 border border-astral-200 text-center font-bold rounded bg-astral-200" v-for="weekday in daysOfWeek">
+      <section class="grid grid-cols-7 sm:gap-1 md:gap-2 m-auto">
+        <div class="sm:p-0 md:p-2 border border-astral-200 text-center font-bold rounded bg-astral-200" v-for="weekday in daysOfWeek" :key="weekday">
           {{ weekday }}
         </div>
-        <div class="p-2 min-h-28 border border-astral-200 text-center rounded bg-astral-50" v-for="day in firstDay" :key="`day-${day}`">
-          &nbsp;
-        </div>
-        <div class="p-2 min-h-28 border border-astral-200 text-center" v-for="day in daysInMonth" :key="`actual-${day}`">
-          {{ day }}
-        </div>
+        <Day class="bg-astral-50 dark:bg-astral-900" v-for="day in firstDay" :key="`day-${day}`" :day="0" />
+        <Day class="bg-astral-50 dark:bg-astral-700 dark:text-astral-50" v-for="day in daysInMonth" :key="`actual-${day}`" :day="day" :day-data="getHoliday(day) || {}" :long-wekend-data="getLongWeekends()"/>
       </section>
-    </template>
-  </Card>
+  </div>
 </template>
