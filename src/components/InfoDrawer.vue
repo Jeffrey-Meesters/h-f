@@ -44,8 +44,8 @@ const dateOptions: Intl.DateTimeFormatOptions = {
       <span class="text-[#fff]">
         Today {{ holidayStore.isTodayPublicHoliday ? 'is a' : 'is NOT a' }} public holiday
       </span>
-      <h3 class="text-[#fff] mt-4">Long weekends this year:</h3>
       <Divider />
+      <h3 class="text-[#fff] font-semibold mt-4">Long weekends this year:</h3>
       <div class="flex flex-col text-[#fff] font-extralight">
         <span class="mt-1" v-for="date in holidayStore.longWeekendsData" :key="date.startDate">
           {{new Date(date.startDate).toLocaleDateString(undefined, dateOptions)}} tot {{ new Date(date.endDate).toLocaleDateString(undefined, dateOptions) }}.

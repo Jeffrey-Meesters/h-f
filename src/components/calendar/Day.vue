@@ -34,6 +34,13 @@ const partOfLongWeekend = computed(() => {
       isBridgeDay: false
     };
 })
+
+const focus = (event: MouseEvent) => {
+  (event?.target as HTMLInputElement)?.focus()
+}
+const unfocus = (event: MouseEvent) => {
+  (event?.target as HTMLInputElement)?.blur()
+}
 </script>
 
 <template>
@@ -42,7 +49,7 @@ const partOfLongWeekend = computed(() => {
     <span v-if="day">
       {{ day }}
     </span>
-    <span v-if="dayData?.localName" class="p-2 bg-astral-400 text-[#fff] text-center truncate relative">
+    <span v-if="dayData?.localName" class="focus:outline-none p-2 bg-astral-400 text-[#fff] text-center truncate relative" @mouseover="focus($event)" @mouseleave="unfocus($event)">
       <span v-tooltip.top.focus="`${dayData.localName} - ${dayData.name}`" tabindex="1" class="absolute top-0 right-0">
         <i class="pi pi-plus" ></i>
       </span>
