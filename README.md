@@ -7,6 +7,7 @@
 - Tailwind
 - Fetch
 - Pinia
+- github action to deploy when "main" is updated
 - Todo's
   - Add unit tests
   - See if smaller typography helps on smaller devices
