@@ -25,7 +25,7 @@ Go into the project and run `pnpm install`.
 After installing you can run `pnpm run dev` to start the application.  
 
 ## Preview
-[Dark Main screenshot](https://github.com/Jeffrey-Meesters/h-f/blob/main/src/assets/dark_screenshot_main.png)
-[Light Main screenshot](https://github.com/Jeffrey-Meesters/h-f/blob/main/src/assets/light_screenshot_main.png)
-[Dark Screenshot with sidebar](https://github.com/Jeffrey-Meesters/h-f/blob/main/src/assets/dark_screenshot_sidebar.png)
-[Light Screenshot with sidebar](https://github.com/Jeffrey-Meesters/h-f/blob/main/src/assets/light_screenshot_sidebar.png)
+[Dark Main screenshot](https://github.com/Jeffrey-Meesters/h-f/blob/main/src/assets/dark_screenshot_main.png)  
+[Light Main screenshot](https://github.com/Jeffrey-Meesters/h-f/blob/main/src/assets/light_screenshot_main.png)  
+[Dark Screenshot with sidebar](https://github.com/Jeffrey-Meesters/h-f/blob/main/src/assets/dark_screenshot_sidebar.png)  
+[Light Screenshot with sidebar](https://github.com/Jeffrey-Meesters/h-f/blob/main/src/assets/light_screenshot_sidebar.png)  
